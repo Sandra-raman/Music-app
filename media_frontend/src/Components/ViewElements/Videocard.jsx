@@ -49,13 +49,20 @@ console.log(videoDetails);
     }
     
    }
+   const handleDrag=(e,vid)=>{
+    console.log("video drag started");
+    console.log(e);
+    console.log(vid);
+    
+    
+   }
   return (
     <div>
       <div className="row">
       {/* { */}
         {/* // allvideos.map(videos=> */}
           <div className="col mt-3 ">
-             <Card style={{ width: '24rem' }}>
+             <Card draggable={true} onDragStart={e=>handleDrag(e,videoDetails.id)} style={{ width: '24rem' }}>
       <Card.Img variant="top" src={videoDetails.imageURL} fluid alt='...' onClick={handleShow} />
       <Card.Body>
         <Card.Title>{videoDetails.caption}</Card.Title>

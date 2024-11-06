@@ -95,6 +95,16 @@ function Addcateory() {
       
     }
   }
+  const videoOver=(e)=>{
+    console.log("video hover");   
+    console.log(e);
+    e.preventDefault();
+
+  }
+  const videoDrop=(e,cid)=>{
+    console.log("video dropped " +cid);
+    console.log(e);    
+  }
   useEffect(()=>{handlegetcategory()},[])
   const [staticModal, setStaticModal] = useState(false);
 
@@ -106,7 +116,7 @@ function Addcateory() {
     <div className="row">
       {
         categoryDetails.length>0?categoryDetails.map((item)=>(
-          <div className="col p-3 my-3 mx-5 d-flex justify-content-between border">
+          <div onDragOver={e=>videoOver(e)} onDrop={e=>videoDrop(e,item.id)} className="col p-3 my-3 mx-5 d-flex justify-content-between border">
             <h4 className='me-5 fs-5'>{item.categoryName}</h4>
             <MdOutlineDelete onClick={()=>handledeletecat(item.id)} className='fs-3 text-danger ms-5' /> 
           </div>
