@@ -86,11 +86,11 @@ const handleAdd=async()=>{
               <MDBBtn className='btn-close' color='light' onClick={toggleOpen}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody className='border p-2 m-3'>
-              <p className='mb-4'>please fill the following details:</p>
-              <div>
-              <MDBInput onChange={e=>setvideoDetails({...videoDetails,caption:e.target.value})} label="Video Caption" id="typeText" type="text" className='my-2'/>
-              <MDBInput onChange={e=>setvideoDetails({...videoDetails,imageURL:e.target.value})} label="Video Image" id="typeText" type="text" className='my-2'/>
-              <MDBInput onChange={getEmbedLink} label="Video URL" id="typeText" type="text" className='my-2'/>
+              <p className='mb-4 '>please fill the following details:</p>
+              <div >
+              <MDBInput onChange={e=>setvideoDetails({...videoDetails,caption:e.target.value})} label="Video Caption" id="typeText" type="text" className='my-2' style={{ color: 'orange' }} />
+              <MDBInput onChange={e=>setvideoDetails({...videoDetails,imageURL:e.target.value})} label="Video Image" id="typeText" type="text" className='my-2' style={{ color: 'orange' }}/>
+              <MDBInput onChange={getEmbedLink} label="Video URL" id="typeText" type="text" className='my-2' style={{ color: 'orange' }}/>
               </div>
             </MDBModalBody>
             <MDBModalFooter>

@@ -132,7 +132,7 @@ function Addcateory() {
       </MDBModalHeader>
       <MDBModalBody>
         <div>
-        <MDBInput onChange={e=>setcategoryName(e.target.value)} label="Add category" id="typeText" type="text" className='my-2'/>
+        <MDBInput onChange={e=>setcategoryName(e.target.value)} label="Add category" id="typeText" type="text" className='my-2' style={{ color: 'orange' }}/>
 
         </div>
       </MDBModalBody>
