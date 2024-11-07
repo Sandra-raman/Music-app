@@ -10,7 +10,7 @@ import {
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
 import { MDBInput } from 'mdb-react-ui-kit';
-import { addCategoryAPI, deleteCategory, getcategoryAPI } from '../../../Services/allAPI';
+import { addCategoryAPI, deleteCategory, getAvideo, getcategoryAPI } from '../../../Services/allAPI';
 import Swal from 'sweetalert2'
 import { MdOutlineDelete } from "react-icons/md";
 
@@ -101,9 +101,14 @@ function Addcateory() {
     e.preventDefault();
 
   }
-  const videoDrop=(e,cid)=>{
+  const videoDrop=async(e,cid)=>{
     console.log("video dropped " +cid);
     console.log(e);    
+    let vid=e.dataTransfer.getData("videoId")
+    console.log("videoId:",vid);
+    const {data}=await getAvideo(vid)
+    console.log(data);
+    
   }
   useEffect(()=>{handlegetcategory()},[])
   const [staticModal, setStaticModal] = useState(false);

@@ -53,7 +53,7 @@ console.log(videoDetails);
     console.log("video drag started");
     console.log(e);
     console.log(vid);
-    
+    e.dataTransfer.setData("videoId",vid)
     
    }
   return (

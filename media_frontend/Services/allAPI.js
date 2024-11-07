@@ -38,4 +38,8 @@ export const deleteCategory=async(id)=>{
     return await commonAPI('delete',`${serverURL}/Cateory/${id}`,"")
 }
 //10 get a particular video details from the server
+export const getAvideo=async(id)=>{
+    return await commonAPI('get',`${serverURL}/allVideos/${id}`,"")
+}
+
 //11 update a particular video details from the server
