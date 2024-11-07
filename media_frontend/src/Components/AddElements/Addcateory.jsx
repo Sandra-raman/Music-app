@@ -102,12 +102,17 @@ function Addcateory() {
 
   }
   const videoDrop=async(e,cid)=>{
-    console.log("video dropped " +cid);
+    console.log("video dropped on category Id:" +cid);
     console.log(e);    
     let vid=e.dataTransfer.getData("videoId")
     console.log("videoId:",vid);
     const {data}=await getAvideo(vid)
     console.log(data);
+    const selectedCategory=categoryDetails.find((item)=>item.id==cid)
+    console.log(selectedCategory);
+    //push to allvideos
+    selectedCategory.allvideos.push(data)
+    
     
   }
   useEffect(()=>{handlegetcategory()},[])
