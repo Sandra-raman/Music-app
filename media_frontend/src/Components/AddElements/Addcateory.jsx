@@ -10,7 +10,7 @@ import {
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
 import { MDBInput } from 'mdb-react-ui-kit';
-import { addCategoryAPI, deleteCategory, getAvideo, getcategoryAPI } from '../../../Services/allAPI';
+import { addCategoryAPI, deleteCategory, getAvideo, getcategoryAPI, updateAPI } from '../../../Services/allAPI';
 import Swal from 'sweetalert2'
 import { MdOutlineDelete } from "react-icons/md";
 
@@ -112,6 +112,9 @@ function Addcateory() {
     console.log(selectedCategory);
     //push to allvideos
     selectedCategory.allvideos.push(data)
+    const result=await updateAPI(cid,selectedCategory)
+    console.log(result);
+    
     
     
   }

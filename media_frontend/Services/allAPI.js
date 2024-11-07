@@ -43,3 +43,6 @@ export const getAvideo=async(id)=>{
 }
 
 //11 update a particular video details from the server
+export const updateAPI=async(cid,reqBody)=>{
+    return await commonAPI('put',`${serverURL}/Cateory/${cid}`,reqBody)
+}
