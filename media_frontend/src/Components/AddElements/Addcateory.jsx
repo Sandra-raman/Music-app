@@ -114,8 +114,7 @@ function Addcateory() {
     selectedCategory.allvideos.push(data)
     const result=await updateAPI(cid,selectedCategory)
     console.log(result);
-    
-    
+    handlegetcategory()    
     
   }
   useEffect(()=>{handlegetcategory()},[])
@@ -131,7 +130,16 @@ function Addcateory() {
         categoryDetails.length>0?categoryDetails.map((item)=>(
           <div onDragOver={e=>videoOver(e)} onDrop={e=>videoDrop(e,item.id)} className="col p-3 my-3 mx-5 d-flex justify-content-between border">
             <h4 className='me-5 fs-5'>{item.categoryName}</h4>
-            <MdOutlineDelete onClick={()=>handledeletecat(item.id)} className='fs-3 text-danger ms-5' /> 
+            <MdOutlineDelete onClick={()=>handledeletecat(item.id)} className='fs-3 text-danger ms-5' /> <br />
+
+            <div className="border ">
+              {
+                item.allvideos.map(item=>(
+                  <p className='row'>{item.caption}</p>
+                  
+                ))
+              }
+            </div>
           </div>
         )):"no category"
       }
